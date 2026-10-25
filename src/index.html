@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:">
+<title>Fire</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="rail" id="rail"></aside>
+<aside class="side" id="side"></aside>
+<div class="main">
+  <header class="top">
+    <label class="search"><span id="icSearch"></span><input id="q" type="search" placeholder="Search for anything..."></label>
+    <span class="sp"></span>
+    <button class="ib" id="bellBtn" title="Reminders"></button>
+    <button class="me" id="meBtn" title="Settings"></button>
+  </header>
+  <div class="split">
+    <section class="list" id="list"></section>
+    <section class="editor" id="editor"></section>
+  </div>
+</div>
+<dialog id="set"></dialog>
+<dialog id="ask"><h3 id="askT"></h3><p id="askM"></p><div class="btns" id="askB"></div></dialog>
+<input type="file" id="file" accept=".fire,.firedata,.txt,.md" multiple hidden>
+<input type="file" id="fileData" accept=".firedata" hidden>
+<input type="file" id="imgIn" accept="image/*" multiple hidden>
+<input type="file" id="dpIn" accept="image/*" hidden>
+<script src="app.js"></script>
+</body>
+</html>
