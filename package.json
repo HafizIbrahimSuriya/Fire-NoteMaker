@@ -1,0 +1,54 @@
+{
+  "name": "fire",
+  "version": "1.0.0",
+  "description": "Fire - notes, tasks, goals and reminders. No account needed.",
+  "main": "main.js",
+  "author": "Fire",
+  "scripts": {
+    "start": "electron .",
+    "build": "npm run build:x64 && npm run build:x86 && npm run build:arm64",
+    "build:x64": "electron-builder --win portable --x64",
+    "build:x86": "electron-builder --win portable --ia32",
+    "build:arm64": "electron-builder --win portable --arm64",
+    "build:all": "npm run build:x64 && npm run build:x86 && npm run build:arm64"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.fire.notes",
+    "productName": "Fire",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**",
+      "assets/**"
+    ],
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64",
+            "ia32",
+            "arm64"
+          ]
+        }
+      ],
+      "signAndEditExecutable": true
+    },
+    "portable": {
+      "artifactName": "Fire-${arch}.exe"
+    },
+    "nsis": {
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico"
+    }
+  }
+}
