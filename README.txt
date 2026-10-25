@@ -61,7 +61,7 @@ PROJECT STRUCTURE
   src/           the app (index.html, app.js, style.css)
   assets/        logo and icons
   build/         installer icons
-  docs/          banner, screenshots, changelog, release notes
+  docs/          README images, changelog, release notes
 
 
 MAKER
